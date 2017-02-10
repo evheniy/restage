@@ -4,13 +4,13 @@
   "description": "React static site generator",
   "main": "index.js",
   "scripts": {
-    "test": "npm run security && npm run clear && npm run lint && npm run coverage",
-    "test:watch": "npm run test -- --watch",
-    "lint": "./node_modules/.bin/eslint .",
-    "coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover ./node_modules/.bin/_mocha -- tests --recursive",
-    "coverage:report": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "clear": "./node_modules/.bin/rimraf coverage",
-    "security": "./node_modules/.bin/nsp check"
+    "clear": "./node_modules/.bin/rimraf coverage dist",
+    "lint": "./node_modules/.bin/npm-run-all lint:**",
+    "lint:js": "./node_modules/.bin/eslint src tests",
+    "test": "./node_modules/.bin/npm-run-all test:**",
+    "test:security": "./node_modules/.bin/nsp check",
+    "test:coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover ./node_modules/.bin/_mocha -- tests/**/*.{js,jsx}",
+    "report": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "engines": {
     "node": ">=7.0.0"
@@ -43,7 +43,12 @@
     "immutable": "^3.8.1",
     "koa": "^2.0.0-alpha.7",
     "koa-router": "^7.0.1",
+    "npm-run-all": "^4.0.1",
     "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "webpack": "^2.2.1"
   },
@@ -55,12 +60,18 @@
     "chai-immutable": "^1.6.0",
     "coveralls": "^2.11.15",
     "debug": "^2.6.0",
+    "enzyme": "^2.7.1",
     "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "istanbul": "^1.1.0-alpha.1",
+    "jsdom": "^9.10.0",
     "mocha": "^3.2.0",
     "mocha-lcov-reporter": "^1.2.0",
     "nsp": "^2.6.2",
+    "react-addons-test-utils": "^15.4.2",
     "rimraf": "^2.5.4",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0"

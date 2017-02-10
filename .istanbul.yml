@@ -1,4 +1,4 @@
 instrumentation:
   default-excludes: true
-  excludes: ['dist/**', 'webpack.config.js']
+  excludes: ['dist/**', 'webpack.config.js', 'src/app/index.jsx']
   include-all-sources: true

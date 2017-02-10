@@ -13,7 +13,7 @@
     "report": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=6.9.5"
   },
   "repository": {
     "type": "git",

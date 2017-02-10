@@ -1,3 +1,4 @@
 instrumentation:
   default-excludes: true
+  excludes: ['dist/**', 'webpack.config.js']
   include-all-sources: true

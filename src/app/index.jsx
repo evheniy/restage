@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './app.jsx';
 
-/* export default () => {
-    ReactDOM.render(
-        <h1>Test</h1>,
-        document.getElementById('root')
-    );
-} */
-
-export default () => <div><h1>Test</h1></div>;
+ReactDOM.render(
+    <App title="Test" />,
+    document.getElementById('root')
+);

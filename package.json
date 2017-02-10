@@ -11,7 +11,7 @@
     "test:security": "./node_modules/.bin/nsp check",
     "test:coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover ./node_modules/.bin/_mocha -- tests/**/*.{js,jsx}",
     "report": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "prepush": "npm run lint && npm test"
+    "precommit": "npm run lint && npm test"
   },
   "engines": {
     "node": ">=6.9.5"
@@ -67,6 +67,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
+    "husky": "^0.13.1",
     "istanbul": "^1.1.0-alpha.1",
     "jsdom": "^9.10.0",
     "mocha": "^3.2.0",

@@ -1,0 +1,68 @@
+{
+  "name": "restage",
+  "version": "0.0.1",
+  "description": "React static site generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run security && npm run clear && npm run lint && npm run coverage",
+    "test:watch": "npm run test -- --watch",
+    "lint": "./node_modules/.bin/eslint .",
+    "coverage": "./node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover ./node_modules/.bin/_mocha -- tests --recursive",
+    "coverage:report": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "clear": "./node_modules/.bin/rimraf coverage",
+    "security": "./node_modules/.bin/nsp check"
+  },
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evheniy/restage.git"
+  },
+  "keywords": [
+    "react",
+    "static",
+    "site",
+    "generator",
+    "cms",
+    "content",
+    "management",
+    "system"
+  ],
+  "author": "Evheniy Bystrov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evheniy/restage/issues"
+  },
+  "homepage": "https://github.com/evheniy/restage#readme",
+  "dependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "config": "^1.25.1",
+    "immutable": "^3.8.1",
+    "koa": "^2.0.0-alpha.7",
+    "koa-router": "^7.0.1",
+    "react": "^15.4.2",
+    "redux": "^3.6.0",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-istanbul": "^0.12.1",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "chai-immutable": "^1.6.0",
+    "coveralls": "^2.11.15",
+    "debug": "^2.6.0",
+    "eslint": "^3.14.1",
+    "eslint-plugin-react": "^6.9.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.2.0",
+    "nsp": "^2.6.2",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
+  }
+}
